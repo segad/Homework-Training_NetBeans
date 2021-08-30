@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package loveCalculator;
-
+//comment line
 public class FromStringToInteger {
 
 	String name1, name2, zajedno;
