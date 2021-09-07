@@ -7,20 +7,22 @@ package loveCalculator;
 //comment line
 public class FromStringToInteger {
 
-	String name1, name2, zajedno;
+	String name1, name2, together, inLove;
+
+    
 	int broj;
 
 	public void racunanje() {
-		zajedno = name1.toLowerCase() + name2.toLowerCase();
+		together = name1.toLowerCase() + name2.toLowerCase();
 
 		
 		// Brojanje koliko s pojedini brojevi ponavljalju
 
-		int ch[] = new int[zajedno.length()];
-		for (int i = 0; i < zajedno.length(); i++) {
+		int ch[] = new int[together.length()];
+		for (int i = 0; i < together.length(); i++) {
 			int brojac = 0;
-			for (int j = 0; j < zajedno.length(); j++) {
-				if (zajedno.charAt(j) == zajedno.charAt(i)) {
+			for (int j = 0; j < together.length(); j++) {
+				if (together.charAt(j) == together.charAt(i)) {
 					brojac++;
 				}
 			}
@@ -40,58 +42,58 @@ public class FromStringToInteger {
 		//postavljam neki broj koji je veći od 100 tako da uđe u while petlju
 		//a dalje ga kontrolira broj koji se nalazi unutra
 		
-		String zaljubljenost = "1000";
+		inLove = "1000";
 
 
 
-		while ((Integer.parseInt(zaljubljenost))>100) {
+		while ((Integer.parseInt(inLove))>100) {
 
 			
 			// Ukoliko je niz brojeva neparan broj, ostat će mi jedan element kojeg upisujem na kraj
 			if (prviKorak % 2 != 0) {
-				zaljubljenost = "";
+				inLove = "";
 				for (int i = 0; i < prviKorak / 2; i++) {
-					zaljubljenost += String.valueOf((ch[i]) + (ch[prviKorak - 1 - i]));
+					inLove += String.valueOf((ch[i]) + (ch[prviKorak - 1 - i]));
 				}
-				zaljubljenost += String.valueOf(ch[(prviKorak / 2)]);
-				prviKorak = zaljubljenost.length();
+				inLove += String.valueOf(ch[(prviKorak / 2)]);
+				prviKorak = inLove.length();
 				for (int i = 0; i < prviKorak; i++) {
 
 					// Sprječavanje greške MIN_RADIX koja se događa kada se koristi parseInt za
 					// stringove 0 i 1.
-					if (zaljubljenost.substring((i), (i + 1)) == "0") {
+					if (inLove.substring((i), (i + 1)) == "0") {
 						ch[i] = 0;
 
-					} else if (zaljubljenost.substring((i), (i + 1)) == "1") {
+					} else if (inLove.substring((i), (i + 1)) == "1") {
 						ch[i] = 1;
 					}
 
 					else {
-						ch[i] = Integer.parseInt(zaljubljenost.substring((i), (i + 1)));
+						ch[i] = Integer.parseInt(inLove.substring((i), (i + 1)));
 					}
 
 				}
 			} 
 			//Ukoliko je niz brojeva paran broj, zbrajam prvi za zadnjim elementom i tako se pomićem prema sredini
 			else if (prviKorak % 2 == 0) {
-				zaljubljenost = "";
+				inLove = "";
 				for (int i = 0; i < prviKorak / 2; i++) {
-					zaljubljenost += String.valueOf((ch[i]) + (ch[prviKorak - 1 - i]));
+					inLove += String.valueOf((ch[i]) + (ch[prviKorak - 1 - i]));
 				}
-				prviKorak = zaljubljenost.length();
+				prviKorak = inLove.length();
 				for (int i = 0; i < prviKorak; i++) {
 
 					// Sprječavanje greške MIN_RADIX koja se događa kada se koristi parseInt za
 					// stringove 0 i 1.
-					if (zaljubljenost.substring((i), (i + 1)) == "0") {
+					if (inLove.substring((i), (i + 1)) == "0") {
 						ch[i] = 0;
 
-					} else if (zaljubljenost.substring((i), (i + 1)) == "1") {
+					} else if (inLove.substring((i), (i + 1)) == "1") {
 						ch[i] = 1;
 					}
 
 					else {
-						ch[i] = Integer.parseInt(zaljubljenost.substring((i), (i + 1)));
+						ch[i] = Integer.parseInt(inLove.substring((i), (i + 1)));
 					}
 
 				}
@@ -103,7 +105,7 @@ public class FromStringToInteger {
 		}
 		
 		//Ispis koliko su posto zaljubljeni
-		System.out.println("\nLjubavni par " + name1 + " & " + name2 + " zaljubljeni su " + zaljubljenost+"%.");
+		System.out.println("\nLjubavni par " + name1 + " & " + name2 + " zaljubljeni su " + inLove+"%.");
 	}
 
 	public int getBroj() {
@@ -130,5 +132,12 @@ public class FromStringToInteger {
 	public void setName2(String ime2) {
 		this.name2 = ime2;
 	}
+        public String getInLove() {
+        return inLove;
+    }
+
+    public void setInLove(String inLove) {
+        this.inLove = inLove;
+    }
 
 }

@@ -35,27 +35,23 @@ public class LoveCalculatorWindow extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         btnCalculate = new javax.swing.JButton();
         txtName1 = new javax.swing.JTextField();
         txtName2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnReset1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setText("Name of 1st partner");
 
         jLabel2.setText("Name of 2nd partner");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Verdana", 3, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("LOVE CALCULATOR");
-        jScrollPane1.setViewportView(jTextArea1);
-
         btnCalculate.setText("Calculate");
         btnCalculate.setToolTipText("");
-        btnCalculate.setActionCommand("Calculate");
         btnCalculate.setAutoscrolls(true);
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,83 +64,182 @@ public class LoveCalculatorWindow extends javax.swing.JFrame {
                 txtName1ActionPerformed(evt);
             }
         });
+        txtName1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtName1KeyPressed(evt);
+            }
+        });
+
+        txtName2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtName2KeyPressed(evt);
+            }
+        });
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel3.setText("LOVE CALCULATOR");
+
+        jLabel4.setText("Result");
+
+        btnReset1.setText("Reset");
+        btnReset1.setToolTipText("");
+        btnReset1.setAutoscrolls(true);
+        btnReset1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReset1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(72, 72, 72)
-                                .addComponent(btnCalculate))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtName2, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                .addComponent(txtName1)))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtName2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(106, 106, 106))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnReset1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnCalculate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGap(69, 69, 69)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalculate))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(btnCalculate))
+                    .addComponent(txtName2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset1))
+                .addGap(23, 23, 23)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtName2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
-        boolean name1 = true;
         
-        fromStringToInteger.racunanje();
+        CheckName1();
+        
+        
+        
+        
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtName1ActionPerformed
 
+    private void txtName1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtName1KeyPressed
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtName1.setText(editName(txtName1.getText()));
+            
+            txtName2.requestFocus();
+            
+        }
+    }//GEN-LAST:event_txtName1KeyPressed
+
+    private void txtName2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtName2KeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtName2.setText(editName(txtName2.getText()));
+            
+            btnCalculateActionPerformed(null);
+            
+        }
+    }//GEN-LAST:event_txtName2KeyPressed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        jTextField1.setText("Love couple " + txtName1.getText() + " & " + txtName2.getText() + " are in love " + fromStringToInteger.getInLove()+"%.");
+        
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btnReset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReset1ActionPerformed
+        // TODO add your handling code here:
+        txtName1.setText("");
+        txtName2.setText("");
+        jTextField1.setText("");
+        txtName1.requestFocus();
+    }//GEN-LAST:event_btnReset1ActionPerformed
+
+    private String editName(String s){
+        try {
+            s = s.trim();
+         return s.substring(0,1).toUpperCase()+s.substring(1).toLowerCase();
+        } catch (Exception e) {
+            return s;
+        }
+        }
     
-    private void CheckName1(boolean name1){
+    private void CheckName1(){
         while(true){
             
-                fromStringToInteger.setName1(txtName1.getName());
+                fromStringToInteger.setName1(txtName1.getText());
         if ((fromStringToInteger.getName1()) == null || (fromStringToInteger.getName1()).equals("")) {
 			//Open error window, empty insert
                         JOptionPane.showMessageDialog(rootPane, "There is no data in field name 1. Please insert text in the dialog box");
-                        name1 = false;
+                     
+                        txtName1.requestFocus();
                         break;
 
 		}
+        else{
+            CheckName2();
+        }
         try {
 			Integer.parseInt((fromStringToInteger.getName1()));
                         JOptionPane.showMessageDialog(rootPane, "Inserted data in field name 1 consist number. Only text format is allowed.");
 
 		} catch (NumberFormatException e) {
-                    name1 = false;
+                 
                     break;
 
 		}
             
         }
+        
         
     
 
@@ -153,13 +248,19 @@ public class LoveCalculatorWindow extends javax.swing.JFrame {
     private void CheckName2(){
         while(true){
             
-                fromStringToInteger.setName2(txtName2.getName());
+                fromStringToInteger.setName2(txtName2.getText());
         if ((fromStringToInteger.getName2()) == null || (fromStringToInteger.getName2()).equals("")) {
 			//Open error window, empty insert
                         JOptionPane.showMessageDialog(rootPane, "There is no data in field name 2. Please insert text in the dialog box");
+                        txtName2.requestFocus();
                         break;
 
 		}
+        else{
+             fromStringToInteger.racunanje();
+             //Output
+            jTextField1ActionPerformed(null);
+        }
         try {
 			Integer.parseInt((fromStringToInteger.getName2()));
                         JOptionPane.showMessageDialog(rootPane, "Inserted data in field name 2 consist number. Only text format is allowed.");
@@ -170,6 +271,7 @@ public class LoveCalculatorWindow extends javax.swing.JFrame {
 		}
             
         }
+       
         
     
 
@@ -213,10 +315,12 @@ public class LoveCalculatorWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
+    private javax.swing.JButton btnReset1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtName2;
     // End of variables declaration//GEN-END:variables
